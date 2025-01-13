@@ -1,35 +1,22 @@
 import React from 'react';
 
 const App = () => {
+  const Watermark = () => {
+    return `
+      <div class="absolute inset-0 flex justify-center items-center">
+        <p class="text-6xl font-bold text-gray-700 opacity-20 transform rotate-45 select-none">
+          Under Development
+        </p>
+      </div>
+    `;
+  };
+
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Doctor Appointment System</h1>
-      <p style={styles.subtitle}>This feature is currently under development. Stay tuned for updates!</p>
+    <div className="">
+      
+      <div dangerouslySetInnerHTML={{ __html: Watermark() }} />
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    backgroundColor: '#f7f7f7',
-    fontFamily: 'Arial, sans-serif',
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  subtitle: {
-    fontSize: '1.2rem',
-    color: '#666',
-    marginTop: '10px',
-  },
 };
 
 export default App;
