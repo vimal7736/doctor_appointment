@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between py-4 mb-5 border-b border-b-gray'>
       <img src= {assets.logo} alt ="" />
-      <ul>
+      <ul className='hidden md:flex items-start font-medium space-x-10'>
         <NavLink>
             <li>Home</li>
             <hr/>
