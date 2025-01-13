@@ -27,18 +27,19 @@
     y="70"
     font-family="Arial, sans-serif"
     font-size="32" 
-    fill="#ccc"
+    fill="#FF6F61"
     font-weight="600"  
   >
     Doc-lienz
   </text>
 
   <text
-    x="120"
-    y="95"
+    x="30"
+    y="115"
     font-family="Arial, sans-serif"
-    font-size="14"
-    fill="#666666"
+    font-size="22"
+    fill="#ccc"
+    font-weight="400"
   >
     Your trusted doctor appointment app
   </text>
