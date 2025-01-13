@@ -8,6 +8,7 @@ import About from './pages/About';
 import Doctor from './pages/Doctor';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
+import Contact from './pages/Contact';
 
 const App = () => {
   const Watermark = () => {
@@ -27,7 +28,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/doctor" element={<Doctor />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/doctors" element={<Doctor />} />
         <Route path="/doctor/:speciality" element={<Doctor />} />
         <Route path="/login" element={<Login />} />
         <Route path="/my-appoinments" element={<MyAppoinments />} />
