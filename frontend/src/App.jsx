@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div className="mx-4 sm:mx-[10%]">
-      <div dangerouslySetInnerHTML={{ __html: Watermark() }} />
+      {/* <div dangerouslySetInnerHTML={{ __html: Watermark() }} /> */}
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
