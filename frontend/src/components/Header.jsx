@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { assets } from '../assets/assets';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -19,7 +20,7 @@ const Header = () => {
                     With our doctor appointment app, you can schedule consultations, get reminders, and focus on what matters most—your health and well-being.
                 </p>
             </div>
-            <div className="w-1/2">
+            <div className="flex flex-col w-1/2">
                 {/* Right side */}
                 <img
                     src={assets.lady_doc}
@@ -30,6 +31,11 @@ const Header = () => {
                         isLoaded ? 'opacity-100' : 'opacity-0'
                     }`}
                 />
+                <button  className="w-full bg-gradient-to-r from-slate-800 via-primary to-primary hover:text-danger text-[15px]  text-white font-bold py-1 px-4 rounded-full"> 
+                    <NavLink to ="/doctors">
+                        Find a Doctor
+                    </NavLink>
+                </button>
             </div>
         </div>
     );
