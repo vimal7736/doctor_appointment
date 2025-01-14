@@ -1,5 +1,6 @@
 import React from 'react'
 import { specialityData } from '../assets/assets'
+import { Link } from 'react-router-dom'
 
 const Speciatity = () => {
     return (
@@ -12,11 +13,11 @@ const Speciatity = () => {
             </p>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 '>
                 {specialityData.map((data) => (
-                    <div key={data.id} className='items-center flex flex-col bg-gradient-to-r from-gray-700 via-gray-900 to-primary text-gray-400 p-4 m-4 rounded-sm'>
+                    <Link key={data.id} to={`/doctors/${data?.speciality}`} className='items-center flex flex-col bg-gradient-to-r from-gray-700 via-gray-900 to-primary text-gray-400 p-4 m-4 rounded-sm'>
                         <img src={data.image} alt={data.title} className='w-20 h-20  rounded-full' />
                         <h2 className='text-xl text-gray-300 font-bold'>{data.speciality}</h2>
                         <p className=' text-center text-[12px]'>{data.description}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
