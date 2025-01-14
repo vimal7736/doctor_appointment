@@ -23,6 +23,9 @@ return (
                             </div>
                     ))}
             </div>
+            <button 
+            onClick={()=>{navigate('/doctors');scrollTo(0,0)} }
+            className='bg-gray-800 text-sm font-medium w-1/12 h-10 text-white rounded-full'>More</button>
     </div>
 )
 }
