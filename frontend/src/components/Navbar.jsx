@@ -66,10 +66,11 @@ const Navbar = () => {
           <div className='px-10 flex items-center space-x-5 cursor-pointer group  relative '>
             <img className='w-10 rounded-2xl' src={assets.profile_pic} alt="" />
             <img className='w-3' src={assets.dropdown_icon} alt="" />
-            <div className='hidden group-hover:block absolute top-10 left-5 text-[10px]  w-24 text-pretty shadow-md bg-primary font-semibold text-white rounded-md flex flex-col space-y-2'>
-              <div onClick={()=>navigate('/my-profile')} >My Profile</div>
-              <div onClick={()=>navigate('/my-appoinments')}>My Appoinments</div>
+            <div className='hidden  group-hover:block absolute top-10 left-5 text-[12px]  w-24 text-pretty shadow-md bg-primary font-semibold text-white rounded-md flex flex-col space-y-2'>
+              <div className='hover:text-danger' onClick={()=>navigate('/my-profile')} >My Profile</div>
+              <div className='hover:text-danger' onClick={()=>navigate('/my-appoinments')}>My Appoinments</div>
               <div
+              className='hover:text-danger'
               onClick={()=>{
                 setToken(false)
                 navigate('/')
@@ -80,8 +81,8 @@ const Navbar = () => {
         ) : (
           <button
             onClick={() => (navigate('/login'))}
-            className='hidden md:block  px-4 py-2 text-white bg-primary rounded-s-sm hover:bg-danger'>
-            Create Account
+            className=' text-[12px] px-4 py-2 text-white bg-primary rounded-full hover:bg-danger'>
+            Create Acc 
           </button>
         )}
 
