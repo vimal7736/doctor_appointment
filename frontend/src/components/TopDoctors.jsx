@@ -1,17 +1,20 @@
-import React from 'react'
-import { doctors } from '../assets/assets'
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../context/AppContext';
 
 
 const TopDoctors = () => {
+    const navigate = useNavigate();
+    const {doctors} = useContext(AppContext);
 return (
     <div className='flex flex-col items-center justify-center text-center p-4'>
             <p className='text-2xl font-bold mb-2'>Leading Experts in Healthcare</p>
             <p className='text-sm text-gray-600 mb-6'>When it comes to your health, trust only the best</p>
-            <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+            <div className=' relative w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                     {doctors && doctors.slice(0,8).map((doctor) => (
-                            <div key={doctor._id} className='cursor-pointer rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center bg-white'>
-                                    <img src={doctor.image} alt={doctor.name} className='w-36 h-36 rounded-full mb-4'/>
+                            <div  onClick={()=>navigate(`/appointment/${doctor._id}`)} key={doctor._id} className='cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center bg-white'>
                                     <p className='text-lg font-semibold'>{doctor.name}</p>
+                                    <img src={doctor.image} alt={doctor.name} className='w-32 h-36'/>
                                     <p className='text-sm text-gray-500'>{doctor.speciality}</p>
                                     <div className='flex items-center  gap-2 p-2'>
                                         <div className='w-2 h-2 rounded bg-green-500' ></div>

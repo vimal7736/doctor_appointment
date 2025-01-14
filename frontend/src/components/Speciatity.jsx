@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Speciatity = () => {
     return (
         <div className='p-4 flex items-center flex-col' id='speciality'>
-            <div className='text-3xl font-extrabold text-primary mb-4'>
+            <div className='text-2xl font-bold text-primary mb-4'>
                 Our Specialities
             </div>
             <p className='text-[10px] text-center md:text-base lg:text-lg'>
@@ -17,10 +17,10 @@ const Speciatity = () => {
                         key={data.id}
                         onClick={()=>scrollTo(0,0)}
                         to={`/doctors/${data?.speciality}`}
-                        className='items-center flex flex-col bg-gradient-to-r from-gray-700 via-gray-900 to-primary text-gray-400 p-4 m-4 rounded-sm'>
-                        <img src={data.image} alt={data.title} className='w-20 h-20  rounded-full' />
-                        <h2 className='text-xl text-gray-300 font-bold'>{data.speciality}</h2>
-                        <p className=' text-center text-[12px]'>{data.description}</p>
+                        className='items-center flex flex-col p-4 m-4 '>
+                        <img src={data.image} alt={data.title} className='w-20 h-20  rounded-full transition-all hover:scale-105 hover:shadow-md hover:shadow-primary cursor-pointer' />
+                        <h2 className='text-xl text-gray-400 font-medium'>{data.speciality}</h2>
+                        {/* <p className=' text-center text-[12px]'>{data.description}</p> */}
                     </Link>
                 ))}
             </div>
