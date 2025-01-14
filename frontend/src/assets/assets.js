@@ -63,29 +63,36 @@ export const assets = {
 export const specialityData = [
     {
         speciality: 'General physician',
-        image: General_physician
+        image: General_physician,
+        description: 'General physicians are your primary care doctors who provide comprehensive medical care, diagnosing and treating common illnesses and providing preventive care.'
     },
     {
         speciality: 'Gynecologist',
-        image: Gynecologist
+        image: Gynecologist,
+        description: 'Gynecologists specialize in women’s health, particularly in matters related to the female reproductive system, including pregnancy, childbirth, and disorders.'
     },
     {
         speciality: 'Dermatologist',
-        image: Dermatologist
+        image: Dermatologist,
+        description: 'Dermatologists are experts in diagnosing and treating skin conditions, from acne to skin cancer, as well as performing cosmetic procedures like Botox and laser treatments.'
     },
     {
         speciality: 'Pediatricians',
-        image: Pediatricians
+        image: Pediatricians,
+        description: 'Pediatricians provide medical care for infants, children, and adolescents, monitoring their growth, development, and offering immunizations and treatment for illnesses.'
     },
     {
         speciality: 'Neurologist',
-        image: Neurologist
+        image: Neurologist,
+        description: 'Neurologists specialize in disorders of the brain, spine, and nervous system, diagnosing conditions such as epilepsy, Parkinson’s disease, and multiple sclerosis.'
     },
     {
         speciality: 'Gastroenterologist',
-        image: Gastroenterologist
+        image: Gastroenterologist,
+        description: 'Gastroenterologists treat conditions affecting the digestive system, including issues with the stomach, liver, intestines, and rectum, such as IBS, acid reflux, and liver disease.'
     },
-]
+];
+
 
 export const doctors = [
     {

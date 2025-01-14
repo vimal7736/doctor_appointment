@@ -31,10 +31,14 @@ const Header = () => {
                         isLoaded ? 'opacity-100' : 'opacity-0'
                     }`}
                 />
-                <button  className="w-full bg-gradient-to-r from-slate-800 via-primary to-primary hover:text-danger text-[15px]  text-white font-bold py-1 px-4 rounded-full"> 
-                    <NavLink to ="/doctors">
-                        Find a Doctor
-                    </NavLink>
+                <button  className="w-full bg-gradient-to-r from-slate-800 via-primary to-primary hover:text-gray-700 items-baseline text-[7px] md:text-[10px] lg:text-[20px]  text-white font-bold py-1 px-4 rounded-full"> 
+                    <a className="flex  h-7 justify-between" href ="#speciality">
+                    <img  src={assets.group_profiles} alt="" />
+                    <div>
+                        Book Appoinment
+
+                    </div>
+                    </a>
                 </button>
             </div>
         </div>
