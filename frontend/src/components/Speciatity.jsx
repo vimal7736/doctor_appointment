@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Speciatity = () => {
     return (
-        <div className='p-4 flex items-center flex-col' id='speciality'>
+        <div className='p-4 flex items-center flex-col mt-8' id='speciality'>
             <p className='text-2xl font-medium mb-2'>Our Specialities</p>
 
             
