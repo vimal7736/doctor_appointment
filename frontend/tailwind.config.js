@@ -13,6 +13,16 @@ export default {
       },
       gridTemplateColumns : {
         'auto': 'repeat(auto-fill, minmax(150px, 1fr))'
+      },  
+      fontFamily:{
+        'poppins': ['Poppins', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+      'openSans': ['Open Sans', 'sans-serif'],
+      'raleway': ['Raleway', 'sans-serif'],
+      'merriweather': ['Merriweather', 'serif'],
+      'playfair': ['Playfair Display', 'serif'],
       }
     },
   },
