@@ -13,7 +13,7 @@ const Header = () => {
                     Your Health, <br /> Just a Click Away
                 </p>
                 <br />
-                <p className="text-[12px] md:text-[15px] lg:text-[20px] bg-gradient-to-r  from-gray-700  via-black to-gray-900 font-semibold text-transparent bg-clip-text z-10 relative">
+                <p className="text-[12px] md:text-[15px] lg:text-[20px] bg-gradient-to-r  from-gray-700  via-gray-700 to-gray-950 font-semibold text-transparent bg-clip-text z-10 relative">
                     Get instant access to a network of trusted medical professionals.
                     <br />
                     <br />
