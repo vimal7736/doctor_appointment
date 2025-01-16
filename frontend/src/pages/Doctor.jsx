@@ -64,12 +64,12 @@ const Doctor = () => {
               </div>
               <h3 className="text-lg font-semibold text-gray-800">{doctor.name}</h3>
               <p className="text-sm text-gray-600">{doctor.speciality}</p>
-              <button
+              {/* <button
                 className="mt-4 px-4 py-2 bg-primary text-white text-sm font-medium rounded-md hover:bg-primary/90 transition-colors duration-200"
                 onClick={() => console.log(`View profile of ${doctor.name}`)}
               >
                 View Profile
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
