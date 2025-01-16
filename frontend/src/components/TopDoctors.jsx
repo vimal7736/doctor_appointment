@@ -6,6 +6,10 @@ import { AppContext } from '../context/AppContext';
 const TopDoctors = () => {
     const navigate = useNavigate();
     const {doctors} = useContext(AppContext);
+    
+   
+
+
 return (
     <div className='flex flex-col items-center justify-center text-center p-4'>
             <p className='text-2xl font-medium mb-2'>Leading Experts in Healthcare</p>
@@ -25,7 +29,7 @@ return (
             </div>
             <button 
             onClick={()=>{navigate('/doctors');scrollTo(0,0)} }
-            className='bg-gray-800 mt-2 text-sm font-medium w-1/2 h-10 text-white rounded-full'>More</button>
+            className='bg-gray-800 mt-2 text-sm font-medium w-1/6 h-10 text-white rounded-full'>More</button>
     </div>
 )
 }
