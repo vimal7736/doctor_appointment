@@ -8,33 +8,47 @@ const Apoinment = () => {
 
   const { docId } = useParams();
   const { doctors, currency } = useContext(AppContext)
-  const [dates , setDates] =useState([]);
-  console.log(dates,'dates');
-  
+  const [dates, setDates] = useState([]);
+  console.log(dates, 'dates');
+
   const [doctor, setDoctor] = useState({});
   console.log(doctor, '12');
-  
+
   const fetchDoctor = async () => {
     const foundDoc = doctors.find((doc) => doc._id === docId)
     setDoctor(foundDoc)
   }
-  
-  const  generateDates = async () => {
+
+  const generateTimeSlots = () => {
+    const timeSlots = [];
+    let currentHour = 8;
+    while (currentHour < 22) {
+      timeSlots.push(`${currentHour}:00`);
+      timeSlots.push(`${currentHour}:30`);
+      currentHour++;
+    }
+    return timeSlots;
+  }
+
+  const generateDatesTimes = async () => {
     const Today = new Date();
-    const nextSevenDays =[];
+    const nextSevenDays = [];
     for (let i = 0; i < 7; i++) {
       let currentDate = new Date(Today);
       currentDate.setDate(Today.getDate() + i)
-      console.log(`${currentDate}`,"123");
-      nextSevenDays.push(currentDate.toDateString());
+      console.log(`${currentDate}`, "123");
+      nextSevenDays.push({
+        date: currentDate.toDateString(),
+        timeSlots: generateTimeSlots(),
+      });
     }
     setDates(nextSevenDays)
   }
-  useEffect(() => { 
+  useEffect(() => {
     fetchDoctor();
-    generateDates();
-  }, 
-  [doctors, docId]);
+    generateDatesTimes();
+  },
+    [doctors, docId]);
 
   return (
     <div className='px-2 py-4 '>
@@ -52,10 +66,25 @@ const Apoinment = () => {
         </div>
       </div>
       <div>
-        {dates && dates.map((date)=>(
-          <div>{date}</div>
+        {dates && dates.map((item, index) => (
+          <div key={index}>
+            <p>
+              {item.date}
+            </p>
+            <div className='flex gap-5 flex-wrap'>
+              {
+                item.timeSlots.map(time=>(
+                  <span>{time}</span>
+                ))
+              }
+            </div>
+
+
+
+          </div>
         ))}
       </div>
+
     </div>
   )
 }
