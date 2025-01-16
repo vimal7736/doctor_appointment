@@ -59,6 +59,7 @@ const Doctor = () => {
                   src={doctor.image}
                   alt={doctor.name}
                   className="w-full h-full object-cover"
+                  onClick={()=>nav(`/appointment/${doctor._id}`)}
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-800">{doctor.name}</h3>
