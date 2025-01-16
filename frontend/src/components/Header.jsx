@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex flex-col relative md:flex-row lg:flex-row bg-primary text-white rounded-se-full justify-between items-left p-4">
             <div>
                 {/* Left side */}
-                <p className="text-lg font-medium md:text-3xl md:font-bold lg:text-5xl lg:font-extrabold">
+                <p className="text-lg p-2 font-medium md:text-3xl md:font-bold lg:text-5xl lg:font-extrabold bg-clip-text bg-gradient-to-r from-white to-blue-200 text-transparent">
                     Your Health, <br /> Just a Click Away
                 </p>
                 <br />
