@@ -12,7 +12,7 @@ const Header = () => {
                 <h1 className="text-xl md:text-4xl lg:text-5xl font-extrabold bg-clip-text bg-gradient-to-r from-white to-blue-200 text-transparent">
                     Your Health, <br /> Just a Click Away
                 </h1>
-                <p className="text-sm md:text-base lg:text-lg bg-clip-text bg-gradient-to-r from-gray-50 via-gray-50 to-gray-50 text-transparent font-medium leading-relaxed">
+                <p className="text-sm md:text-base lg:text-lg bg-clip-text bg-gradient-to-r from-gray-50 via-gray-50 to-gray-400 text-transparent font-medium leading-relaxed">
                     Instantly access a trusted network of medical professionals. <br />
                     With our app, schedule consultations, receive reminders, <br />
                     and prioritize your well-being with ease.
