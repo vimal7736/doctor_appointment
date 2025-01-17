@@ -23,6 +23,7 @@ const Banner = () => {
             <button
               onClick={() => {
                 nav('/doctors');
+                scrollTo(0,0)
               }}
               className="px-6 py-3 bg-yellow-400 text-black rounded-lg font-semibold hover:bg-yellow-300 transition duration-300"
             >
@@ -31,8 +32,9 @@ const Banner = () => {
             <button
               onClick={() => {
                 nav('/contact');
+                scrollTo(0,0)
               }}
-              className="px-6 py-3 border-2 border-yellow-400 rounded-lg font-semibold text-yellow-400 hover:bg-yellow-400 hover:text-black transition duration-300"
+              className="px-6 py-3 border-2 border-yellow-400 rounded-lg font-semibold text-yellow-400 hover:bg-yellow-400 hover:text-black transition duration-300 "
             >
               Get in Touch
             </button>
