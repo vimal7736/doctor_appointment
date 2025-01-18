@@ -1,13 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
+import RelatedDoctor from '../components/RelatedDoctor';
 
 const Apoinment = () => {
   const { docId } = useParams();
   const { doctors, currency } = useContext(AppContext)
   const [docInfo, setDoctorInfo] = useState(null);
+  console.log(docInfo,'12');
+  
+  
   const [docSlots, setDocSlots] = useState([]);
-  const [slotIndex, setSlotIndex] = useState('');
+  const [slotIndex, setSlotIndex] = useState(0);
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 
@@ -98,7 +102,10 @@ const Apoinment = () => {
           {docSlots.length > 0 && docSlots.map((item, index) => {
             return (
 
-              <div key={index} >
+              <div
+                onClick={() => setSlotIndex(index)}
+                className={`text-center min-w-16 rounded-3xl cursor-pointer ${slotIndex === index ? "bg-primary" : "bg-gray-300"}`}
+                key={index} >
 
                 <p>{item[0] && daysOfWeek[item[0].dateTime.getDay()]}</p>
                 {/* item[0].dateTime is a Date object for the first time slot 
@@ -111,7 +118,20 @@ const Apoinment = () => {
             )
           })}
         </div>
+        <div>
+          {docSlots.length && docSlots[slotIndex].map((item,index)=>(
+            <p key={index} >
+              {item.time.toLowerCase()}
+            </p>
+          ))}
+        </div>
 
+      </div>
+      <div>
+        <RelatedDoctor 
+        docId={docId}
+        speciality={docInfo?.speciality}
+        />
       </div>
 
 
