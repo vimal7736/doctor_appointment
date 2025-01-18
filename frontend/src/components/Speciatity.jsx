@@ -17,9 +17,9 @@ const Speciatity = () => {
                         key={data.id}
                         onClick={()=>scrollTo(0,0)}
                         to={`/doctors/${data?.speciality}`}
-                        className='items-center flex flex-col p-4 m-4 '>
-                        <img src={data.image} alt={data.title} className='w-20 h-20  rounded-full transition-all hover:scale-105 hover:shadow-md hover:shadow-primary cursor-pointer' />
-                        <p className='text-[10px] text-gray-400 font-medium'>{data.speciality}</p>
+                        className='items-center flex flex-col p-4 m-4  '>
+                        <img src={data.image} alt={data.title} className='w-20 h-20  rounded-full transition-all hover:scale-105 hover:shadow-md hover:shadow-primary cursor-pointer ' />
+                        <p className='text-[13px]  hover:shadow-xl hover:shadow-black  text-gray-400 font-medium'>{data.speciality}</p>
                         {/* <p className=' text-center text-[12px]'>{data.description}</p> */}
                     </Link>
                 ))}
