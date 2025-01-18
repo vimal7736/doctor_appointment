@@ -96,15 +96,15 @@ const Apoinment = () => {
           </div>
         </div>
       }
-      <div className=" flex flex-col items-center text-center mt-4">
-        <p className='p-4 m-3 border rounded-full text-white bg-primary' >Booking Slots</p>
-        <div className='flex gap-1 min-w-[50%] items-center w-[90%] overflow-auto'>
+      <div className=" flex flex-col  text-center mt-4">
+        <p className='p-3 m-2 w-[25%] border rounded-full text-white bg-primary' >Booking Slots</p>
+        <div className='flex p-6 mt-3 gap-3  items-center w-[90%] overflow-auto'>
           {docSlots.length > 0 && docSlots.map((item, index) => {
             return (
 
               <div
                 onClick={() => setSlotIndex(index)}
-                className={`text-center w-16 flex flex-col  rounded-3xl cursor-pointer ${slotIndex === index ? "bg-primary" : "bg-gray-300"}`}
+                className={`text-center text-white shadow shadow-xl shadow-black p-3 flex flex-col  rounded-3xl cursor-pointer ${slotIndex === index ? "bg-primary" : "bg-gray-300"}`}
                 key={index} >
 
                 <p>{item[0] && daysOfWeek[item[0].dateTime.getDay()]}</p>
@@ -118,9 +118,9 @@ const Apoinment = () => {
             )
           })}
         </div>
-        <div>
+        <div className='flex w-[90%] custom-scroll  flex-row overflow-auto gap-2 space-x-1  mt-4  p-2  '>
           {docSlots.length && docSlots[slotIndex].map((item,index)=>(
-            <p key={index} >
+            <p key={index} className='border rounded-full p-2' >
               {item.time.toLowerCase()}
             </p>
           ))}

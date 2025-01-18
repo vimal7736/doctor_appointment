@@ -23,8 +23,24 @@ export default {
       'raleway': ['Raleway', 'sans-serif'],
       'merriweather': ['Merriweather', 'serif'],
       'playfair': ['Playfair Display', 'serif'],
-      }
+      },
+      scrollbar: {
+        DEFAULT: {
+          width: '8px',
+          height: '8px',
+        },
+        thumb: {
+          backgroundImage: 'linear-gradient(to bottom, gray, white)',
+          borderRadius: '10px',
+        },
+        track: {
+          backgroundColor: '#f0f0f0',
+          borderRadius: '50%',
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
 }
