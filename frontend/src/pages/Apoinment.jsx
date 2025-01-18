@@ -79,19 +79,21 @@ const Apoinment = () => {
 
 
   return (
-    <div className='px-2 py-4 '>
+
+    
+    <div className='px-2 py-4  '>
       {docInfo &&
 
-        <div className='flex flex-wrap flex-col md:flex-row justify-start  mt-4'>
-          <div className=' shadow-black shadow-lg w-1/4 rounded-full bg-red-300'>
+        <div className='flex flex-wrap flex-col md:flex-row justify-start  mt-4  shadow-2xl rounded-xl shadow-black gap-7 p-4 w-full py-5'>
+          <div className=' shadow-black shadow-lg w-1/4 rounded-full bg-indigo-950'>
             <img className='rounded-full' src={docInfo.image} alt="" />
           </div>
-          <div className='p-3 w-3/4 flex flex-col  '>
+          <div className='py-14 w-1/2 flex flex-col  '>
             <div><span className='font-semibold text-center  '>Name: </span> {docInfo.name}</div>
             <div><span className='font-semibold text-center '>Degree: </span>{docInfo.degree}</div>
             <div><span className='font-semibold text-center ' >Experience: </span>{docInfo.experience}</div>
             <div><span className='font-semibold text-center '>specializd: </span>{docInfo.speciality}</div>
-            <div><span className='font-mono text-center border-2 px-2 border-danger   rounded-full'>fee</span> : {currency}{docInfo.fees}</div>
+            <div><span className='font-mono text-center border shadow-xl px-2 shadow-danger   rounded-full'>fee</span> : {currency}{docInfo.fees}</div>
 
           </div>
         </div>
