@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header className="flex flex-col relative md:flex-row bg-primary text-white rounded-2xl justify-between items-start p-6 lg:p-10">
             {/* Left Side */}
-            <div className="z-10 space-y-6">
+            <div className=" space-y-6">
                 <h1 className="text-xl md:text-4xl lg:text-5xl font-extrabold bg-clip-text bg-gradient-to-r from-white to-blue-200 text-transparent">
                     Your Health, <br /> Just a Click Away
                 </h1>
