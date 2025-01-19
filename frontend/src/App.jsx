@@ -39,7 +39,7 @@ const App = () => {
           <Route path="/appointment/:docId" element={<Apoinment />} />
         </Routes>
       </div>
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
   );

@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className=" text-black py-8">
+        <footer className=" text-black py-12">
 
 
-            <div className=" flex justify-between px-6 items-center shadow-xl shadow-primary mt-8 pt-4 text-center">
+            <div className=" h-[11vh] flex justify-between px-6 items-cente text-center">
                 <div className=" mb-4 lg:mb-0">
                     <img
                         src={assets.logo}
