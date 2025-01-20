@@ -27,12 +27,12 @@ const Doctor = () => {
 
 
   return (
-    <div className='p-2 flex flex-col gap-4 '>
-      <p className=' px-6 text-pretty font-poppins text-md md:text-lg lg:text-3xl font-semibold'>Connect with experienced doctors for your healthcare needs</p>
-      <div className='flex flex-col items-center md:flex-col justify-between '>
-        <div className="flex flex-row overflow-auto w-[99%] custom-scroll mb-6 justify-between py-4 px-6 gap-4">
+    <div className='p-2 flex flex-col  gap-4 '>
+      <p className=' p-10  bg-primary py-10 rounded-md text-pretty text-white font-poppins text-md md:text-lg lg:text-3xl font-semibold'>Connect with experienced doctors for your healthcare needs</p>
+      <div className='flex  flex-col items-center md:flex-col justify-between '>
+        <div className="flex  flex-row overflow-auto w-[100%] custom-scroll mb-6 justify-between py-4 px-2 gap-4">
           <p
-            className="cursor-pointer border-2 border-gray-300 px-4 py-2 text-xs md:text-sm font-medium rounded-full hover:bg-danger hover:text-white transition-all duration-300"
+            className=" flex items-center cursor-pointer border-2 border-gray-300 px-4 py-2 text-xs md:text-[11px] font-medium rounded-full hover:bg-danger hover:text-white transition-all duration-300"
             onClick={() => speciality === '' ? nav('/doctors') : nav('/doctors')}
           >
             All Doctors
@@ -41,7 +41,7 @@ const Doctor = () => {
             <p
               key={speciality}
               onClick={() => nav(`/doctors/${speciality}`)}
-              className="cursor-pointer border-2 border-gray-300 px-4 py-2 text-xs md:text-sm font-medium rounded-full hover:border-white hover:bg-primary hover:text-white transition-all duration-300"
+              className=" flex  items-center cursor-pointer border-2 border-gray-300 px-4 py-2 text-xs md:text-[11px] font-medium rounded-full hover:border-white hover:bg-primary hover:text-white transition-all duration-300"
             >
               {speciality}
             </p>
