@@ -30,7 +30,7 @@ const MyProfile = () => {
             <input
               type="text"
               value={userData.name}
-              onChange={(e)=> setUserData((prev) => ({...prev , name: e.target.value }))}
+              onChange={(e) => setUserData((prev) => ({ ...prev, name: e.target.value }))}
               className="border border-gray-300 rounded-md px-4 py-2 w-full text-center"
             />
           ) : (
@@ -38,12 +38,52 @@ const MyProfile = () => {
           )}
 
           <p className="text-gray-600">{userData.email}</p>
-          <p className="text-gray-600">{userData.phone}</p>
+          {isEdit ? (
+            <input 
+            className="border border-gray-300 rounded-md px-4 py-2 w-full text-center"
 
-          <div className="text-gray-600 text-center">
-            <p>{userData.address.line1}</p>
-            <p>{userData.address.line2}</p>
-          </div>
+              onChange={
+                (e) => setUserData((prev) => ({ ...prev, phone: e.target.value }))
+              }
+              value={userData.phone} />
+
+          ) : (
+            <p className="text-gray-600">{userData.phone}</p>
+
+          )}
+          {isEdit ? (
+            <div 
+            className=" rounded-md px-4 py-2 w-full text-center"
+            
+            >
+              <input
+              className="border mb-3 border-gray-300 rounded-md px-4 py-2 w-full text-center"
+
+                value={userData.address.line1}
+                type="text"
+                onChange={
+                  (e) => setUserData(prev =>
+                    ({ ...prev, address: { ...prev.address, line1: e.target.value } })
+                  )} />
+              <input
+                value={userData.address.line2}
+                type="text"
+              className="border border-gray-300 rounded-md px-4 py-2 w-full text-center"
+
+                onChange={
+                  (e) => setUserData(prev =>
+                    ({ ...prev, address: { ...prev.address, line2: e.target.value } })
+                  )
+                }
+              />
+            </div>
+          ) : (
+            <div className="text-gray-600 text-center">
+              <p>{userData.address.line1}</p>
+              <p>{userData.address.line2}</p>
+            </div>
+          )}
+
 
           <p className="text-gray-600">Gender: {userData.gender}</p>
           <p className="text-gray-600">DOB: {userData.dob}</p>
