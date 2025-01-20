@@ -68,7 +68,7 @@ const Navbar = () => {
             <img className='w-3' src={assets.dropdown_icon} alt="" />
             <div className='z-10 hidden group-hover:block absolute top-10 left-5 text-[11px] w-[116px] text-pretty shadow-lg bg-white font-semibold text-gray-700 rounded-md flex flex-col space-y-2 p-2'>
               <div className='hover:text-primary cursor-pointer' onClick={() => navigate('/my-profile')}>My Profile</div>
-              <div className='hover:text-primary cursor-pointer' onClick={() => navigate('/my-appointments')}>My Appointments</div>
+              <div className='hover:text-primary cursor-pointer' onClick={() => navigate('/my-appoinments')}>My Appointments</div>
               <div
                 className='hover:text-primary cursor-pointer'
                 onClick={() => {
