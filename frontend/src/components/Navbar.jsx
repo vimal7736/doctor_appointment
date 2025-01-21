@@ -18,6 +18,8 @@ const Navbar = () => {
 
   return (
     <header className="flex items-center justify-between py-4 mb-5 border-b border-gray-200">
+      <Sidebar />
+
       <NavLink to="/">
         <img className="w-56" src={assets.logo} alt="Logo" />
       </NavLink>
@@ -111,7 +113,6 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <Sidebar />
     </header>
   );
 };
