@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { assets } from '../assets/assets';
 import { NavLink, useNavigate } from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -89,6 +90,7 @@ const Navbar = () => {
         )}
 
       </div>
+      <Sidebar/>
     </div>
   );
 };

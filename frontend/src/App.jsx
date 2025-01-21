@@ -10,11 +10,12 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import NotFoundPage from './pages/NotFound';
 
 const App = () => {
   const Watermark = () => {
     return `
-      <div class="absolute inset-0 flex justify-center items-center">
+      <div class="absolute inset-0 z-50 flex justify-center items-center">
         <p class="text-6xl font-bold text-gray-700 opacity-20 transform rotate-45 select-none">
           Under Development
         </p>
@@ -26,7 +27,7 @@ const App = () => {
     <div>
       <Navbar />
       <div className=" ">
-        {/* <div dangerouslySetInnerHTML={{ __html: Watermark() }} /> */}
+        {/* <div className='' dangerouslySetInnerHTML={{ __html: Watermark() }} /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -37,6 +38,8 @@ const App = () => {
           <Route path="/my-appoinments" element={<MyAppoinments />} />
           <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/appointment/:docId" element={<Apoinment />} />
+          <Route path="*" element={<NotFoundPage />} />
+
         </Routes>
       </div>
       {/* <Footer /> */}
