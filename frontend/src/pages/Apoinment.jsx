@@ -81,63 +81,74 @@ const Apoinment = () => {
   return (
 
     
-    <div className='px-2 py-4  '>
-      {docInfo &&
-
-        <div className='flex flex-wrap flex-col md:flex-row justify-start  mt-4  shadow-2xl rounded-xl shadow-black gap-7 p-4 w-full py-5'>
-          <div className=' shadow-black shadow-lg w-1/4 rounded-full bg-indigo-950'>
-            <img className='rounded-full' src={docInfo.image} alt="" />
-          </div>
-          <div className='py-14 w-1/2 flex flex-col  '>
-            <div><span className='font-semibold text-center  '>Name: </span> {docInfo.name}</div>
-            <div><span className='font-semibold text-center '>Degree: </span>{docInfo.degree}</div>
-            <div><span className='font-semibold text-center ' >Experience: </span>{docInfo.experience}</div>
-            <div><span className='font-semibold text-center '>specializd: </span>{docInfo.speciality}</div>
-            <div><span className='font-mono text-center border shadow-xl px-2 shadow-danger   rounded-full'>fee</span> : {currency}{docInfo.fees}</div>
-
-          </div>
+    <div className="px-4 py-6 bg-gray-50 min-h-screen">
+    {docInfo && (
+      <div className="flex flex-col md:flex-row justify-between items-start bg-white shadow-lg rounded-xl p-6 gap-6">
+        {/* Doctor Image */}
+        <div className="flex-shrink-0 w-40 h-40 rounded-full bg-indigo-100 overflow-hidden shadow-md">
+          <img className="w-full h-full object-cover" src={docInfo.image} alt={docInfo.name} />
         </div>
-      }
-      <div className=" flex flex-col  text-center mt-4">
-        <p className='p-3 m-2 w-[25%] border rounded-full text-white bg-primary' >Booking Slots</p>
-        <div className='flex p-6 mt-3 gap-3  items-center w-[90%] overflow-auto'>
-          {docSlots.length > 0 && docSlots.map((item, index) => {
-            return (
-
-              <div
-                onClick={() => setSlotIndex(index)}
-                className={`text-center text-white shadow shadow-xl shadow-black p-3 flex flex-col  rounded-3xl cursor-pointer ${slotIndex === index ? "bg-primary" : "bg-gray-300"}`}
-                key={index} >
-
-                <p>{item[0] && daysOfWeek[item[0].dateTime.getDay()]}</p>
-                {/* item[0].dateTime is a Date object for the first time slot 
-                in item.
-                item[0].dateTime.getDay() retrieves the day of the week (as a 
-                number from 0 to 6,
-                where 0 is Sunday, 1 is Monday, etc.). */}
-                <p>{item[0] && item[0].dateTime.getDate()}</p>
-              </div>
-            )
-          })}
+  
+        {/* Doctor Info */}
+        <div className="flex flex-col flex-1 gap-4">
+          <h2 className="text-2xl font-bold text-indigo-900">{docInfo.name}</h2>
+          <p className="text-gray-600">
+            <span className="font-semibold">Degree:</span> {docInfo.degree}
+          </p>
+          <p className="text-gray-600">
+            <span className="font-semibold">Experience:</span> {docInfo.experience} years
+          </p>
+          <p className="text-gray-600">
+            <span className="font-semibold">Specialized:</span> {docInfo.speciality}
+          </p>
+          <p className="text-gray-600">
+            <span className="font-semibold">Fee:</span>{" "}
+            <span className="text-indigo-500 font-bold">{currency}{docInfo.fees}</span>
+          </p>
         </div>
-        <div className='flex w-[90%] custom-scroll  flex-row overflow-auto gap-2 space-x-1  mt-4  p-2  '>
-          {docSlots.length && docSlots[slotIndex].map((item,index)=>(
-            <p key={index} className='border rounded-full p-2' >
-              {item.time.toLowerCase()}
-            </p>
+      </div>
+    )}
+  
+    {/* Booking Slots Section */}
+    <div className="mt-10">
+      <h3 className="text-xl font-semibold text-gray-800 text-center mb-4">Booking Slots</h3>
+      <div className="flex gap-4 justify-center overflow-auto">
+        {docSlots.length > 0 &&
+          docSlots.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => setSlotIndex(index)}
+              className={`cursor-pointer text-center py-3 px-4 rounded-xl shadow-md transition-all duration-300 ${
+                slotIndex === index
+                  ? "bg-indigo-500 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              <p className="font-semibold">{item[0] && daysOfWeek[item[0].dateTime.getDay()]}</p>
+              <p>{item[0] && item[0].dateTime.getDate()}</p>
+            </div>
           ))}
-        </div>
-
       </div>
-      <div>
-        <RelatedDoctor 
-        docId={docId}
-        speciality={docInfo?.speciality}
-        />
+      <div className="flex gap-3 mt-6 custom-scroll p-4 overflow-auto">
+        {docSlots.length > 0 &&
+          docSlots[slotIndex]?.map((item, index) => (
+            <div
+              key={index}
+              className="bg-indigo-100 text-indigo-900 py-2 px-4 rounded-md shadow-md hover:bg-indigo-200 transition-all duration-300"
+            >
+              {item.time.toLowerCase()}
+            </div>
+          ))}
       </div>
-
-
     </div>
+  
+    {/* Related Doctor Section */}
+    <div className="mt-10">
+      <p className='text-xl font-semibold'>Related Doctors</p>
+      <RelatedDoctor docId={docId} speciality={docInfo?.speciality} />
+    </div>
+  </div>
+  
   )
 }
 
