@@ -112,7 +112,7 @@ const Apoinment = () => {
     {/* Booking Slots Section */}
     <div className="mt-10">
       <h3 className="text-xl font-semibold text-gray-800 text-center mb-4">Booking Slots</h3>
-      <div className="flex gap-4 justify-center overflow-auto">
+      <div className="flex gap-4 justify-center overflow-auto p-5 custom-scroll">
         {docSlots.length > 0 &&
           docSlots.map((item, index) => (
             <div
