@@ -16,7 +16,7 @@ const Sidebar = () => {
         onClick={toggleSidebar}
       >
         <img
-          src={assets.menu_icon} 
+          src={assets.menu} 
           alt="Menu"
           className="w-6"
         />
